@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paneer Butter Masala | Masala Magic</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200;400;600;700;800;900;1000&family=Open+Sans:wght@400;700&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="imgs/Masala Magic.png">
+    <meta name="description" content="Learn more about our delicious Paneer Butter Masala">
+    <meta name="keywords" content="Paneer Butter Masala, Masala Magic, Indian Cuisine">
+    <meta name="author" content="Masala Magic">
+</head>
+<body>
+    <!-- Start Header -->
+    <header id="header">
+        <div class="container">
+            <a href="index.html" class="mainlogo"><img src="imgs/Masala Magic.png" alt="Logo"> Masala Magic</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#our_mission" class="nav-a">Our Mission</a></li>
+                    <li><a href="index.html#our_process" class="nav-a">Our Process</a></li>
+                    <li><a href="index.html#Menu" class="nav-a">Our Menu</a></li>
+                    <li><a href="reservation.html" class="nav-a">Reservation</a></li>
+                    <li><a href="checkout.html" class="nav-a"><img src="imgs/ShoppingCart.png" alt="Cart"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Main Section -->
+    <main>
+        <div class="container">
+            <div class="main-title">Paneer Butter Masala</div>
+            <div class="dish-details">
+                <div class="dish-description">
+                    <h2>What is Paneer Butter Masala?</h2>
+                    <p>
+                        Paneer Butter Masala is a classic North Indian curry made with soft cubes of paneer (Indian cottage cheese) simmered in a rich, creamy, and flavorful tomato-based gravy. 
+                        It’s a favorite dish in Indian restaurants and is loved for its smooth texture and delightful flavors.
+                    </p>
+                    <h2>Ingredients:</h2>
+                    <ul>
+                        <li>Paneer (Indian cottage cheese)</li>
+                        <li>Tomatoes and cashews (for the gravy)</li>
+                        <li>Butter and cream</li>
+                        <li>Ginger, garlic, and spices (coriander, cumin, garam masala)</li>
+                        <li>Kasturi methi (dried fenugreek leaves) for garnish</li>
+                    </ul>
+                    <h2>How It's Made:</h2>
+                    <p>
+                        The rich gravy is made by blending sautéed tomatoes, cashews, and spices into a smooth paste. The paneer cubes are gently simmered in this creamy sauce, 
+                        enriched with butter and cream, and finished with a garnish of kasturi methi for a fragrant, flavorful touch.
+                    </p>
+                    <h2>Perfect Pairing:</h2>
+                    <p>
+                        Paneer Butter Masala pairs perfectly with naan, roti, or steamed basmati rice.
+                    </p>
+                    <!-- Add to Cart Button -->
+                    <div class="add-to-cart">
+                        <button onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#Menu" class="back-to-menu"><i class="fas fa-arrow-left"></i> Back to Menu</a>
+        </div>
+    </main>
+    <!-- End Main Section -->
+
+    <!-- Start Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Masala Magic. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Add to Cart Function -->
+    <
+    <!-- Add to Cart Function -->
+    
+
+    <!-- Add to Cart Function -->
+    <script>
+        function addToCart() {
+            alert("Paneer Butter Masala added to cart!");
+            // You can add more functionality here for the actual cart (e.g., updating the cart in a database or session)
+        }
+    </script>
+</body>
+</html>
+    <!-- Add to Cart Functionality -->
+    <script>
+        // Cart object to store items and their quantities
+        let cart = [];
+
+        // Function to add items to the cart
+        function addToCart() {
+            const item = {
+                name: "Paneer Butter Masala",
+                price: 14.99, // Example price
+                quantity: 1
+            };
+
+            // Check if the item is already in the cart
+            const existingItem = cart.find(cartItem => cartItem.name === item.name);
+            if (existingItem) {
+                existingItem.quantity++; // Increase quantity if item exists
+            } else {
+                cart.push(item); // Otherwise, add the item to the cart
+            }
+
+            updateCartDisplay(); // Update the cart display
+        }
+
+        // Function to update the cart display
+        function updateCartDisplay() {
+            // Clear previous cart items
+            const cartItemsDiv = document.getElementById("cart-items");
+            cartItemsDiv.innerHTML = "";
+
+            // Add each item in the cart to the display
+            cart.forEach(item => {
+                const itemDiv = document.createElement("div");
+                itemDiv.innerHTML = `${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`;
+                cartItemsDiv.appendChild(itemDiv);
+            });
+
+            // Update total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById("cart-total").innerHTML = `Total: $${total.toFixed(2)}`;
+        }
+    </script>
+    <script>
+        // Add to Cart Function
+        function addToCart() {
+            const item = {
+                name: "Paneer Butter Masala",
+                price: 14.99, // Example price
+                quantity: 1
+            };
+    
+            // Get the existing cart from localStorage
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+            // Check if the item is already in the cart
+            const existingItem = cart.find(cartItem => cartItem.name === item.name);
+            if (existingItem) {
+                existingItem.quantity++; // Increase quantity if item exists
+            } else {
+                cart.push(item); // Otherwise, add the item to the cart
+            }
+    
+            // Save the updated cart back to localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Paneer Butter Masala added to cart!");
+    
+        }
+    </script>
+    </body>
+</html>

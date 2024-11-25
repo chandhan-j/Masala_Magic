@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order | Masala Magic</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200;400;600;700;800;900;1000&family=Open+Sans:wght@400;700&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="imgs/Masala Magic.png">
+    <meta name="description" content="Place your order with Masala Magic">
+    <meta name="keywords" content="Place Order, Masala Magic, Checkout">
+    <meta name="author" content="Masala Magic">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px; /* Spacing between header and content */
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px; /* Max width for larger screens */
+            padding: 20px;
+        }
+
+        .form-container h1 {
+            font-size: 1.8rem;
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            font-size: 1rem;
+            color: #495057;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #495057;
+        }
+
+        .form-container .radio-group {
+            margin-top: 15px;
+        }
+
+        .form-container .radio-group input {
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 15px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .submit-btn {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 10px;
+                border-radius: 6px;
+            }
+
+            .form-container h1 {
+                font-size: 1.3rem;
+            }
+
+            .form-container label {
+                font-size: 0.9rem;
+            }
+
+            .submit-btn {
+                font-size: 0.8rem;
+                padding: 8px;
+            }
+        }
+
+        .payment-options {
+    display: flex;
+    align-items: center;
+}
+
+.payment-options label {
+    margin-right: 10px;
+}
+
+.pay-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.pay-btn:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Start Header -->
+    <header id="header">
+        <div class="container">
+            <a href="index.html" class="mainlogo"><img src="imgs/Masala Magic.png" alt="Logo"> Masala Magic</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#our_mission" class="nav-a nav-otherL">Our Mission</a></li>
+                    <li><a href="index.html#our_process" class="nav-a">Our Process</a></li>
+                    <li><a href="index.html#Menu" class="nav-a">Our Menu</a></li>
+                    <li><a href="reservation.html" class="nav-a">Reservation</a></li>
+                    <li><a href="checkout.html" class="nav-a"><img src="imgs/ShoppingCart.png" alt=""></a></li>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Main Section -->
+    <main>   
+                <!-- Payment Options -->
+                <div class="radio-group">
+                    <label>Payment Option:</label>
+                    <div class="payment-options">
+                        <input type="radio" id="pay-now" name="payment-method" value="pay-now" required>
+                        <label for="pay-now">Pay Now</label>
+                        <button class="pay-btn">Pay Now</button>
+                
+                        <input type="radio" id="pay-at-store" name="payment-method" value="pay-at-store">
+                        <label for="pay-at-store">Pay at Store</label>
+                        <button class="pay-btn">Pay at Store</button>
+                    </div>
+                </div>
+
+                <script>
+        function handlePaymentMethod(paymentMethod) {
+            // Check the payment method chosen by the user
+            if (paymentMethod === "payNow") {
+                // Redirect to a page where the user can enter their personal details
+                window.location.href = "personalDetailsForm.html";
+            } else if (paymentMethod === "payAtStore") {
+                // Redirect to the thank you page
+                window.location.href = "thankyoupage.html";
+            } else {
+                // Default case if no valid option is selected
+                alert("Invalid payment option");
+            }
+        }
+
+                </script>
+
+        <div class="form-container">
+            <h1>Enter Your Details</h1>
+            <form action="confirmation.html" method="post">
+                <!-- Full Name -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <!-- Phone Number -->
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <!--Date-->
+                <label for="date">Date For Pickup:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <!-- Time for Pickup -->
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required min="09:00" max="23:00">
+
+
+                <!-- Billing Address -->
+                <label for="billing-address">Billing Address:</label>
+                <input type="text" id="billing-address" name="billing-address" placeholder="123 Main St, City, Country" required>
+
+                <!-- Credit Card Number -->
+                <label for="credit-card">Credit Card Number:</label>
+                <input type="password" id="credit-card" name="credit-card" placeholder="1234 5678 9012 3456" required>
+
+                <!-- CVV -->
+                <label for="cvv">CVV:</label>
+                <input type="password" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+
+     
+                
+
+                <!-- Submit Button -->
+                <button type="submit" id="placeOrderButton" class="submit-btn">Place Order</button>
+
+                <script>
+                    // Adding an event listener to the button
+                    document.getElementById('placeOrderButton').addEventListener('click', function(event) {
+                        event.preventDefault(); // Prevent the form from submitting immediately
+                        window.location.href = 'thankyoupage.html'; // Redirect to the target page
+                    });
+                </script>
+
+    
+            </form>
+        </div>
+    </main>
+    <!-- End Main Section -->
+    </body>
+</html>
